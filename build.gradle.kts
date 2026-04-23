@@ -1,3 +1,5 @@
+import org.gradle.internal.component.external.model.ComponentVariant
+
 plugins {
     id("java-library")
     id("xyz.jpenilla.run-paper") version "3.0.2"
@@ -13,7 +15,7 @@ dependencies {
 }
 
 java {
-    toolchain.languageVersion = JavaLanguageVersion.of(25)
+    toolchain.languageVersion = JavaLanguageVersion.of(26) //25
 }
 
 tasks {
@@ -22,7 +24,7 @@ tasks {
         // This is the only required configuration besides applying the plugin.
         // Your plugin's jar (or shadowJar if present) will be used automatically.
         minecraftVersion("26.1.2")
-        jvmArgs("-Xms2G", "-Xmx2G")
+        jvmArgs("-Xms4G", "-Xmx4G")
     }
 
     processResources {
@@ -31,4 +33,8 @@ tasks {
             expand(props)
         }
     }
+}
+tasks.withType<JavaCompile>().configureEach { options.encoding = "UTF-8" }
+tasks.withType<Jar> {
+    destinationDirectory = File("D:/MineServer-1.26.2/plugins")
 }

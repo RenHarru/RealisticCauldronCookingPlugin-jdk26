@@ -22,7 +22,6 @@ public class CauldronListener implements Listener {
     public void onInteract(PlayerInteractEvent e) {
         if (e.getHand() != EquipmentSlot.HAND) return;
         if (e.getClickedBlock() == null) return;
-        System.out.println("Тип блока: " + e.getClickedBlock().getType());
 
         Block block = e.getClickedBlock();
         if (block.getType() != Material.CAULDRON

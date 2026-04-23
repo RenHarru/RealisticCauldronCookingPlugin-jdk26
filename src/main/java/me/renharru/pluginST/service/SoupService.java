@@ -101,7 +101,7 @@ public class SoupService {
         }
 
         // Кроличий суп
-        if (data.has(Material.RABBIT) && data.has(Material.CARROT) && data.has(Material.BAKED_POTATO)) {
+        if (data.has(Material.RABBIT) && data.has(Material.CARROT) && data.has(Material.BAKED_POTATO) && data.has(Material.BROWN_MUSHROOM)) {
             data.finish(Material.RABBIT_STEW);
             player.sendMessage("§6Кроличий суп готов!");
         }

@@ -35,6 +35,3 @@ tasks {
     }
 }
 tasks.withType<JavaCompile>().configureEach { options.encoding = "UTF-8" }
-tasks.withType<Jar> {
-    destinationDirectory = File("D:/MineServer-1.26.2/plugins")
-}

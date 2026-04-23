@@ -48,7 +48,7 @@ public class SoupService {
         Location loc = block.getLocation();
         SoupData data = cauldrons.getOrDefault(loc, new SoupData());
 
-        // 🥕 Добавление ингредиентов
+        // Добавление ингредиентов
         if (IngredientUtil.isIngredient(item.getType())) {
 
 
@@ -74,7 +74,7 @@ public class SoupService {
             return;
         }
 
-        // 🥣 Забор супа
+        // Забор супа
         if (item.getType() == Material.BOWL && data.hasSoup()) {
 
             item.setAmount(item.getAmount() - 1);
@@ -94,13 +94,13 @@ public class SoupService {
 
     private void checkRecipe(Player player, Location loc, SoupData data) {
 
-        // 🍄 Грибной суп
+        // Грибной суп
         if (data.has(Material.RED_MUSHROOM) && data.has(Material.BROWN_MUSHROOM)) {
             data.finish(Material.MUSHROOM_STEW);
             player.sendMessage("§6Грибной суп готов!");
         }
 
-        // 🐰 Кроличий суп
+        // Кроличий суп
         if (data.has(Material.RABBIT) && data.has(Material.CARROT) && data.has(Material.BAKED_POTATO)) {
             data.finish(Material.RABBIT_STEW);
             player.sendMessage("§6Кроличий суп готов!");

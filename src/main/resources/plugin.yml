@@ -1,0 +1,8 @@
+name: PluginST
+version: '${version}'
+
+main: me.renharru.pluginST.PluginST
+api-version: '26.1.2'
+load: POSTWORLD
+
+authors: [ RenHarru ]
